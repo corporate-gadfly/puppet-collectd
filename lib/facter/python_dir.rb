@@ -6,20 +6,20 @@
 #
 Facter.add(:python_dir) do
   setcode do
-    if Facter::Util::Resolution.which('python')
+    if Facter::Core::Execution.which('python')
       if Facter.value(:osfamily) == 'RedHat'
-        Facter::Util::Resolution.exec('python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())"')
+        Facter::Core::Execution.execute('python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())"')
       else
-        Facter::Util::Resolution.exec('python -c "import site; print(site.getsitepackages()[0])"')
+        Facter::Core::Execution.execute('python -c "import site; print(site.getsitepackages()[0])"')
       end
-    elsif Facter::Util::Resolution.which('python3')
+    elsif Facter::Core::Execution.which('python3')
       if Facter.value(:osfamily) == 'RedHat'
-        Facter::Util::Resolution.exec('python3 -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())"')
+        Facter::Core::Execution.execute('python3 -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())"')
       else
-        Facter::Util::Resolution.exec('python3 -c "import site; print(site.getsitepackages()[0])"')
+        Facter::Core::Execution.execute('python3 -c "import site; print(site.getsitepackages()[0])"')
       end
     elsif File.exist?('/usr/libexec/platform-python')
-      Facter::Util::Resolution.exec('/usr/libexec/platform-python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())"')
+      Facter::Core::Execution.execute('/usr/libexec/platform-python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())"')
     else
       ''
     end
