@@ -10,8 +10,8 @@
 #
 Facter.add(:collectd_version) do
   setcode do
-    if Facter::Util::Resolution.which('collectd')
-      collectd_help = Facter::Util::Resolution.exec('collectd -h')
+    if Facter::Core::Execution.which('collectd')
+      collectd_help = Facter::Core::Execution.execute('collectd -h')
       %r{^collectd ([+\w.]+), http://collectd\.org/}.match(collectd_help)[1]
     end
   end
