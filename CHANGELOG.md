@@ -4,7 +4,30 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
-## [v15.0.0](https://github.com/voxpupuli/puppet-collectd/tree/v15.0.0) (2025-06-23)
+## [v16.0.0](https://github.com/voxpupuli/puppet-collectd/tree/v16.0.0) (2026-09-14)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-collectd/compare/v15.0.0...v16.0.0)
+
+**Breaking changes:**
+
+- Drop puppet, update openvox minimum version to 8.19 [\#1067](https://github.com/voxpupuli/puppet-collectd/pull/1067) ([TheMeier](https://github.com/TheMeier))
+
+**Implemented enhancements:**
+
+- replace deprecated calls with Facter::Core::Execution [\#1075](https://github.com/voxpupuli/puppet-collectd/pull/1075) ([corporate-gadfly](https://github.com/corporate-gadfly))
+- Add support for FreeBSD 15 [\#1072](https://github.com/voxpupuli/puppet-collectd/pull/1072) ([smortex](https://github.com/smortex))
+- metadata.json: Add OpenVox [\#1059](https://github.com/voxpupuli/puppet-collectd/pull/1059) ([jstraw](https://github.com/jstraw))
+- Allow to specify a custom network server hostname [\#1054](https://github.com/voxpupuli/puppet-collectd/pull/1054) ([smortex](https://github.com/smortex))
+
+**Fixed bugs:**
+
+- Fix owner variable for typesdb config [\#1071](https://github.com/voxpupuli/puppet-collectd/pull/1071) ([msil](https://github.com/msil))
+
+**Merged pull requests:**
+
+- prefer confine over if-statement [\#1076](https://github.com/voxpupuli/puppet-collectd/pull/1076) ([corporate-gadfly](https://github.com/corporate-gadfly))
+
+## [v15.0.0](https://github.com/voxpupuli/puppet-collectd/tree/v15.0.0) (2025-06-24)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-collectd/compare/v14.0.0...v15.0.0)
 
